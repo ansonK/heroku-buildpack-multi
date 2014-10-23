@@ -45,6 +45,12 @@ for BUILDPACK in $(cat $1/.buildpacks); do
 
     if [ $? == 0 ]; then
       echo "=====> Detected Framework: $framework"
+
+      echo "dir: $dir"
+      echo "1: $1"
+      echo "2: $2"
+      echo "3: $3"
+
       $dir/bin/compile $1 $2 $3
 
       if [ $? != 0 ]; then
